@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+      <canvas id="fractal" width="4000" height="4000"></canvas>
+  </body>
+    <script>
+    var fractal, context;
+
+
+    fractal = document.getElementById("fractal");
+
+    context = fractal.getContext("2d");
+
+    function drawSquare(f) {
+      context.beginPath();
+      context.moveTo.apply(context, f.top_left);
+      context.lineTo.apply(context, f.top_right);
+      context.lineTo.apply(context, f.bottom_right);
+      context.lineTo.apply(context, f.bottom_left);
+      context.lineTo.apply(context, f.top_left);
+      context.stroke();
+      context.closePath();
+    }
+
+      drawSquare(<%= Fractal.draw_square(2, 500)%>);
+      drawSquare(<%= Fractal.draw_square(3, 500)%>);
+      drawSquare(<%= Fractal.draw_square(5, 500)%>);
+      drawSquare(<%= Fractal.draw_square(9, 500)%>);
+      context.rotate(90)
+
+      context.rotate(90)
+      drawSquare(<%= Fractal.draw_square(17, 500)%>);
+      drawSquare(<%= Fractal.draw_square(33, 500)%>);
+      drawSquare(<%= Fractal.draw_square(65, 500)%>);
+      drawSquare(<%= Fractal.draw_square(129, 500)%>);
+      context.rotate(90)
+      drawSquare(<%= Fractal.draw_square(257, 500)%>);
+      drawSquare(<%= Fractal.draw_square(513, 500)%>);
+      drawSquare(<%= Fractal.draw_square(1029, 500)%>);
+
+      context.rotate(90)
+
+      context.rotate(90)
+      drawSquare(<%= Fractal.draw_square(2057, 500)%>);
+      drawSquare(<%= Fractal.draw_square(4013, 500)%>);
+
+
+
+    </script>
+    <script src="/app.js" type="text/javascript"></script>
+</html>
